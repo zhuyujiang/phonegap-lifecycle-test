@@ -53,6 +53,6 @@ var app = {
 				break;
 		}
 		
-        console.log('Received Event: ' + id);
+        alert('Received Event: ' + id);
     }
 };
