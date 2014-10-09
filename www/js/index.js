@@ -3,13 +3,17 @@ var app = {
 	// on initialise set up listebers for application lifectycle events
     initialize: function() {
       	document.addEventListener('deviceready', this.onDeviceReady, false);
-		document.addEventListener("pause", this.onPause, false);
-		document.addEventListener("resume", this.onResume, false);
     },
 	
     // deviceready Event Handler
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+		
+		//cannot add lifecycle event listeners until device is ready
+		document.addEventListener("pause", this.onPause, false);
+		document.addEventListener("resume", this.onResume, false);
+        
+		app.receivedEvent('deviceready');
+		
     },
 	
 	 // deviceready Event Handler
