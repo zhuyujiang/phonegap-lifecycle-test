@@ -4,6 +4,7 @@ var launched_count = 0;
 
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
+		console.log("device ready");
     }
 	
 	function updateDisplay() {
