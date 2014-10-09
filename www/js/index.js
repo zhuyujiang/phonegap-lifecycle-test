@@ -7,7 +7,7 @@ var app = {
 	
     // deviceready Event Handler
     onDeviceReady: function() {
-		
+		alert('deviceready Event');
 		//cannot add lifecycle event listeners until device is ready
 		document.addEventListener("pause", this.onPause, false);
 		document.addEventListener("resume", this.onResume, false);
