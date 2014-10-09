@@ -17,5 +17,6 @@
     </author>
 
     <preference name="permissions"                value="none"/>   
-
+	
+	<access origin="*"/>
 </widget>
