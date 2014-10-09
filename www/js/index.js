@@ -12,7 +12,7 @@ var app = {
 		document.addEventListener("pause", this.onPause, false);
 		document.addEventListener("resume", this.onResume, false);
         
-		app.receivedEvent('deviceready');
+		this.receivedEvent('deviceready');
 		
     },
 	
