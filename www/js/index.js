@@ -8,21 +8,24 @@ var app = {
     // deviceready Event Handler
     onDeviceReady: function() {
 		alert('deviceready Event');
+		
 		//cannot add lifecycle event listeners until device is ready
 		document.addEventListener("pause", this.onPause, false);
 		document.addEventListener("resume", this.onResume, false);
         
-		this.receivedEvent('deviceready');
+		app.receivedEvent('deviceready');
 		
     },
 	
 	 // deviceready Event Handler
     onResume: function() {
+		alert('resume Event');
         app.receivedEvent('resume');
     },
 	
 	 // deviceready Event Handler
     onPause: function() {
+		alert('pause Event');
         app.receivedEvent('pause');
     },
 	
