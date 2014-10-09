@@ -26,6 +26,8 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         
+		alert('Received Event: ' + id);
+		
 		var parentElement = document.getElementById(id);
         
 		var listeningElement = parentElement.querySelector('.listening');
@@ -53,6 +55,6 @@ var app = {
 				break;
 		}
 		
-        alert('Received Event: ' + id);
+        
     }
 };
