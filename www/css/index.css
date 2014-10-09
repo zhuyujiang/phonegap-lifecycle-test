@@ -94,17 +94,17 @@ h1 {
 
 .event.received {
     background-color:#4B946A;
-    display:block;
+    display:none;
 }
 
 .event.resumed {
     background-color:#4B946A;
-    display:block;
+    display:none;
 }
 
 .event.paused {
     background-color:#4B946A;
-    display:block;
+    display:none;
 }
 
 
