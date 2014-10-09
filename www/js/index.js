@@ -1,67 +1,36 @@
-var app = {
-    
-	// on initialise set up listeners for application lifectycle events
-    initialize: function() {
-      	document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-	
-    // deviceready Event Handler
-    onDeviceReady: function() {
-		alert('deviceready Event');
-		
-		//cannot add lifecycle event listeners until device is ready
-		document.addEventListener('pause', this.onPause, false);
-		document.addEventListener('resume', this.onResume, false);
-        
-		app.receivedEvent('deviceready');
-		
-    },
-	
-	 // deviceready Event Handler
-    onResume: function() {
-		alert('resume Event');
-        app.receivedEvent('resume');
-    },
-	
-	 // deviceready Event Handler
-    onPause: function() {
-		alert('pause Event');
-        app.receivedEvent('pause');
-    },
-	
-	
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        
-		alert('Received Event: ' + id);
-		
-		var parentElement = document.getElementById(id);
-        
-		var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-		var resumeElement = parentElement.querySelector('.resumed');
-        var pausedElement = parentElement.querySelector('.paused');
+var paused_count =0;
+var resumed_count = 0;
+var launched_count = 0;
 
-		listeningElement.setAttribute('style', 'display:none;');
-		receivedElement.setAttribute('style', 'display:none;');
-		resumeElement.setAttribute('style', 'display:none;');
-        pausedElement.setAttribute('style', 'display:none;');
-		
-		switch (id) {
-			
-			case "deviceready": 
-				receivedElement.setAttribute('style', 'display:block;');
-				break;
-			
-			case "resume":
-				resumeElement.setAttribute('style', 'display:block;');
-				break;
-			
-			case "pause":
-				pausedElement.setAttribute('style', 'display:block;');
-				break;
-		}
-		
-        
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
     }
-};
+	
+	function updateDisplay() {
+		$("#launched").text("Application launched: " + launched_count);
+		$("#resumed").text("Application paused: " + paused_count);
+		$("#paused").text("Application resumed: " + resumed_count);
+	}
+
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+		alert("device ready");
+        
+		document.addEventListener("resume", onResume, false);
+		document.addEventListener("pause", onPause, false);
+		updateDisplay();
+    }
+
+    // Handle the pause event
+    //
+    function onPause() {
+		alert("pause");
+		updateDisplay();
+    }
+	
+	function onResume() {
+		alert("resume");
+		updateDisplay();
+    }
