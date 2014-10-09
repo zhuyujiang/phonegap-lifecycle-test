@@ -20,6 +20,8 @@ var launched_count = 0;
         
 		document.addEventListener("resume", onResume, false);
 		document.addEventListener("pause", onPause, false);
+		
+		launched_count++;
 		updateDisplay();
     }
 
@@ -27,10 +29,12 @@ var launched_count = 0;
     //
     function onPause() {
 		alert("pause");
+		paused_count++;
 		updateDisplay();
     }
 	
 	function onResume() {
 		alert("resume");
+		resumed_count++;
 		updateDisplay();
     }
