@@ -9,18 +9,13 @@
     <name>Application Lifecycle Test</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        A sample application that counts the occurances of lifecycle events.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+    <author href="worcester.ac.uk" email="c.bowers@worc.ac.uk">
+        WBS Computing
     </author>
 
-  
-    <preference name="permissions"                value="none"/>
-
-
-    <access origin="*"/>
-   
+    <preference name="permissions"                value="none"/>   
 
 </widget>
