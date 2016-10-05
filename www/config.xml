@@ -19,4 +19,5 @@
     <preference name="permissions"                value="none"/>   
 	
 	<access origin="*"/>
+   	<plugin name="cordova-plugin-whitelist" version="1" />
 </widget>
