@@ -1,7 +1,14 @@
 var paused_count =0;
 var resumed_count = 0;
 var launched_count = 0;
+var text = '{"name":"BOUNTY Ice Cream","size":"6 pack","weight":"234.6g"}';
 
+var obj = JSON.parse(text);
+
+document.getElementById("demo").innerHTML =
+obj.name + "<br>" +
+obj.street + "<br>" +
+obj.phone;
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
 		console.log("device ready");
